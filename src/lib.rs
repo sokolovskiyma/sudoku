@@ -5,11 +5,11 @@ use std::fmt::{Display, Formatter, Result};
 pub struct Sudoku(pub Vec<Vec<u8>>);
 
 impl Sudoku {
-    pub fn from_vec(vec: Vec<Vec<u8>>) -> Sudoku {
-        Sudoku(vec)
+    pub fn from_vec(vec: Vec<Vec<u8>>) -> Self {
+        Self(vec)
     }
 
-    pub fn solve(&self) -> Option<Sudoku> {
+    pub fn solve(&self) -> Option<Self> {
         let mut solution = self.clone();
         if solution.solve_helper() {
             return Some(solution);
